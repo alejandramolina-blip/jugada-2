@@ -1,0 +1,222 @@
+import { Jugador, Pago, Asistencia, Actividad } from '../types';
+
+export const INITIAL_PLAYERS: Jugador[] = [
+  {
+    id: 'p1',
+    nombre: 'Diego',
+    apellido: 'Maradona',
+    categoria: 'Adulto',
+    fechaNacimiento: '1988-10-30',
+    telefono: '+56 9 8765 4321',
+    correo: 'diego.diez@gmail.com',
+    activo: true,
+  },
+  {
+    id: 'p2',
+    nombre: 'Lionel',
+    apellido: 'Messi',
+    categoria: 'Adulto',
+    fechaNacimiento: '1995-06-24',
+    telefono: '+5 Chile 9 1122 3344',
+    correo: 'lio.pulga@gmail.com',
+    activo: true,
+  },
+  {
+    id: 'p3',
+    nombre: 'Alexis',
+    apellido: 'Sánchez',
+    categoria: 'Adulto',
+    fechaNacimiento: '1996-12-19',
+    telefono: '+56 9 5555 6666',
+    correo: 'alexis.maravilla@hotmail.com',
+    activo: true,
+  },
+  {
+    id: 'p4',
+    nombre: 'Arturo',
+    apellido: 'Vidal',
+    categoria: 'Adulto',
+    fechaNacimiento: '1995-05-22',
+    telefono: '+5 Chile 9 4444 3333',
+    correo: 'king.arturo@gmail.com',
+    activo: true,
+  },
+  {
+    id: 'p5',
+    nombre: 'Ben',
+    apellido: 'Brereton',
+    categoria: 'Juvenil',
+    fechaNacimiento: '2004-04-18',
+    telefono: '+56 9 8888 2222',
+    correo: 'ben.big@yahoo.com',
+    activo: true,
+  },
+  {
+    id: 'p6',
+    nombre: 'Lucas',
+    apellido: 'Assadi',
+    categoria: 'Juvenil',
+    fechaNacimiento: '2005-01-08',
+    telefono: '+56 9 7777 1111',
+    correo: 'lucas.assadi@gmail.com',
+    activo: true,
+  },
+  {
+    id: 'p7',
+    nombre: 'Damián',
+    apellido: 'Pizarro',
+    categoria: 'Juvenil',
+    fechaNacimiento: '2005-03-28',
+    telefono: '+56 9 9999 5555',
+    correo: 'damian.p@gmail.com',
+    activo: true,
+  },
+  {
+    id: 'p8',
+    nombre: 'Carlitos',
+    apellido: 'Pérez',
+    categoria: 'Infantil',
+    fechaNacimiento: '2012-05-15',
+    telefono: '+56 9 1234 5678',
+    correo: 'carlitos.p@gmail.com',
+    activo: true,
+  },
+  {
+    id: 'p9',
+    nombre: 'Mateo',
+    apellido: 'González',
+    categoria: 'Infantil',
+    fechaNacimiento: '2013-09-20',
+    telefono: '+56 9 9876 5432',
+    correo: 'mateog@gmail.com',
+    activo: true,
+  },
+  {
+    id: 'p10',
+    nombre: 'Santi',
+    apellido: 'Muñoz',
+    categoria: 'Infantil',
+    fechaNacimiento: '2014-11-12',
+    telefono: '+56 9 3333 8888',
+    correo: 'santiago.m@gmail.com',
+    activo: false,
+  },
+  {
+    id: 'p11',
+    nombre: 'Juan',
+    apellido: 'Riquelme',
+    categoria: 'Adulto',
+    fechaNacimiento: '1990-06-24',
+    telefono: '+56 9 4444 8888',
+    correo: 'juan.roman@gmail.com',
+    activo: true,
+  },
+  {
+    id: 'p12',
+    nombre: 'Claudio',
+    apellido: 'Bravo',
+    categoria: 'Adulto',
+    fechaNacimiento: '1987-04-13',
+    telefono: '+56 9 2222 9999',
+    correo: 'claudio.capitan@gmail.com',
+    activo: true,
+  },
+];
+
+export const INITIAL_PAYMENTS: Pago[] = [
+  // Pagos de Junio 2026
+  { id: 'pay1', jugadorId: 'p1', mes: 'Junio', anio: 2026, monto: 15000, fecha: '2026-06-05', estado: 'Pagado' },
+  { id: 'pay2', jugadorId: 'p2', mes: 'Junio', anio: 2026, monto: 15000, fecha: '2026-06-08', estado: 'Pagado' },
+  { id: 'pay3', jugadorId: 'p3', mes: 'Junio', anio: 2026, monto: 15000, fecha: '2026-06-10', estado: 'Pagado' },
+  { id: 'pay4', jugadorId: 'p4', mes: 'Junio', anio: 2026, monto: 15000, fecha: '2026-06-12', estado: 'Pagado' },
+  { id: 'pay5', jugadorId: 'p5', mes: 'Junio', anio: 2026, monto: 10000, fecha: '2026-06-14', estado: 'Pagado' },
+  { id: 'pay6', jugadorId: 'p6', mes: 'Junio', anio: 2026, monto: 10000, fecha: '', estado: 'Pendiente' },
+  { id: 'pay7', jugadorId: 'p7', mes: 'Junio', anio: 2026, monto: 10000, fecha: '', estado: 'Atrasado' },
+  { id: 'pay8', jugadorId: 'p8', mes: 'Junio', anio: 2026, monto: 8000,  fecha: '2026-06-02', estado: 'Pagado' },
+  { id: 'pay9', jugadorId: 'p9', mes: 'Junio', anio: 2026, monto: 8000,  fecha: '', estado: 'Pendiente' },
+  
+  // Pagos de Mayo 2026
+  { id: 'pay10', jugadorId: 'p1', mes: 'Mayo', anio: 2026, monto: 15000, fecha: '2026-05-02', estado: 'Pagado' },
+  { id: 'pay11', jugadorId: 'p2', mes: 'Mayo', anio: 2026, monto: 15000, fecha: '2026-05-03', estado: 'Pagado' },
+  { id: 'pay12', jugadorId: 'p5', mes: 'Mayo', anio: 2026, monto: 10000, fecha: '', estado: 'Atrasado' },
+  { id: 'pay13', jugadorId: 'p7', mes: 'Mayo', anio: 2026, monto: 10000, fecha: '', estado: 'Atrasado' },
+  { id: 'pay14', jugadorId: 'p11', mes: 'Mayo', anio: 2026, monto: 15000, fecha: '2026-05-15', estado: 'Pagado' },
+  { id: 'pay15', jugadorId: 'p12', mes: 'Mayo', anio: 2026, monto: 15000, fecha: '2026-05-05', estado: 'Pagado' },
+  
+  // Pagos de Abril 2026
+  { id: 'pay16', jugadorId: 'p1', mes: 'Abril', anio: 2026, monto: 15000, fecha: '2026-04-04', estado: 'Pagado' },
+  { id: 'pay17', jugadorId: 'p2', mes: 'Abril', anio: 2026, monto: 15000, fecha: '2026-04-06', estado: 'Pagado' },
+  { id: 'pay18', jugadorId: 'p3', mes: 'Abril', anio: 2026, monto: 15000, fecha: '2026-04-07', estado: 'Pagado' },
+  { id: 'pay19', jugadorId: 'p4', mes: 'Abril', anio: 2026, monto: 15000, fecha: '2026-04-05', estado: 'Pagado' },
+];
+
+export const INITIAL_ATTENDANCE: Asistencia[] = [
+  // Entrenamiento Adultos 10 de Junio 2026
+  { id: 'a1', fecha: '2026-06-10', categoria: 'Adulto', jugadorId: 'p1', asistio: 'Sí' },
+  { id: 'a2', fecha: '2026-06-10', categoria: 'Adulto', jugadorId: 'p2', asistio: 'Sí' },
+  { id: 'a3', fecha: '2026-06-10', categoria: 'Adulto', jugadorId: 'p3', asistio: 'No' },
+  { id: 'a4', fecha: '2026-06-10', categoria: 'Adulto', jugadorId: 'p4', asistio: 'Sí' },
+  { id: 'a5', fecha: '2026-06-10', categoria: 'Adulto', jugadorId: 'p11', asistio: 'Sí' },
+  { id: 'a6', fecha: '2026-06-10', categoria: 'Adulto', jugadorId: 'p12', asistio: 'Sí' },
+
+  // Entrenamiento Juvenil 11 de Junio 2026
+  { id: 'a7', fecha: '2026-06-11', categoria: 'Juvenil', jugadorId: 'p5', asistio: 'Sí' },
+  { id: 'a8', fecha: '2026-06-11', categoria: 'Juvenil', jugadorId: 'p6', asistio: 'Sí' },
+  { id: 'a9', fecha: '2026-06-11', categoria: 'Juvenil', jugadorId: 'p7', asistio: 'No' },
+
+  // Entrenamiento Infantil 12 de Junio 2026
+  { id: 'a10', fecha: '2026-06-12', categoria: 'Infantil', jugadorId: 'p8', asistio: 'Sí' },
+  { id: 'a11', fecha: '2026-06-12', categoria: 'Infantil', jugadorId: 'p9', asistio: 'Sí' },
+  { id: 'a12', fecha: '2026-06-12', categoria: 'Infantil', jugadorId: 'p10', asistio: 'No' }, // p10 inactivo pero vino o no
+
+  // Entrenamiento Adultos 15 de Junio 2026
+  { id: 'a13', fecha: '2026-06-15', categoria: 'Adulto', jugadorId: 'p1', asistio: 'Sí' },
+  { id: 'a14', fecha: '2026-06-15', categoria: 'Adulto', jugadorId: 'p2', asistio: 'Sí' },
+  { id: 'a15', fecha: '2026-06-15', categoria: 'Adulto', jugadorId: 'p3', asistio: 'Sí' },
+  { id: 'a16', fecha: '2026-06-15', categoria: 'Adulto', jugadorId: 'p4', asistio: 'No' },
+  { id: 'a17', fecha: '2026-06-15', categoria: 'Adulto', jugadorId: 'p11', asistio: 'No' },
+  { id: 'a18', fecha: '2026-06-15', categoria: 'Adulto', jugadorId: 'p12', asistio: 'Sí' },
+];
+
+export const INITIAL_ACTIVITIES: Actividad[] = [
+  {
+    id: 'act1',
+    titulo: 'Entrenamiento Físico e Intenso',
+    tipo: 'Entrenamiento',
+    fecha: '2026-06-20',
+    categoria: 'Adulto',
+    descripcion: 'Ejercicios de resistencia y definición técnica táctica.',
+  },
+  {
+    id: 'act2',
+    titulo: 'Halcones vs Deportivo Huracán',
+    tipo: 'Partido',
+    fecha: '2026-06-21',
+    categoria: 'Adulto',
+    descripcion: 'Gran partido de liga de local en la cancha principal del barrio.',
+  },
+  {
+    id: 'act3',
+    titulo: 'Entrenamiento Juvenil Táctico',
+    tipo: 'Entrenamiento',
+    fecha: '2026-06-23',
+    categoria: 'Juvenil',
+    descripcion: 'Perfeccionamiento de pases largos y control de balón.',
+  },
+  {
+    id: 'act4',
+    titulo: 'Entrenamiento Infantil Recreativo',
+    tipo: 'Entrenamiento',
+    fecha: '2026-06-24',
+    categoria: 'Infantil',
+    descripcion: 'Sesión recreativa para potenciar el compañerismo y pases básicos.',
+  },
+  {
+    id: 'act5',
+    titulo: 'Asado Pro Fondos Canchas',
+    tipo: 'Evento',
+    fecha: '2026-06-27',
+    categoria: 'Todas',
+    descripcion: 'Asado familiar para reunir fondos para mejorar las luminarias de la cancha.',
+  },
+];

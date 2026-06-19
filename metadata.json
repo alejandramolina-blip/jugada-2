@@ -1,0 +1,6 @@
+{
+  "name": "Jugada Maestra",
+  "description": "Plataforma completa de administración para el club de fútbol amateur Los Halcones del Barrio.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
