@@ -1,0 +1,69 @@
+-- =============================================================
+-- SCRIPT DE BASE DE DATOS REAL: JUGADA MAESTRA
+-- CLUB: LOS HALCONES DEL BARRIO
+-- ASIGNATURA: SISTEMAS DE INFORMACIÓN (ING. COMERCIAL)
+-- =============================================================
+
+-- 1. ESTRUCTURA DE LA BASE DE DATOS (DDL)
+
+CREATE TABLE jugadores (
+    id_jugador INT NOT NULL AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    posicion VARCHAR(50) NOT NULL,
+    dorsal INT,
+    estado VARCHAR(20) DEFAULT 'Activo', -- Activo, Lesionado, Suspendido
+    asistencia_promedio INT DEFAULT 0,
+    PRIMARY KEY (id_jugador)
+);
+
+CREATE TABLE asistencia (
+    id_asistencia INT NOT NULL AUTO_INCREMENT,
+    id_jugador INT NOT NULL,
+    fecha DATE NOT NULL,
+    tipo_evento VARCHAR(50) NOT NULL, -- Entrenamiento, Partido
+    estado_asistencia VARCHAR(20) NOT NULL, -- Presente, Ausente, Justificado
+    PRIMARY KEY (id_asistencia),
+    FOREIGN KEY (id_jugador) REFERENCES jugadores(id_jugador) ON DELETE CASCADE
+);
+
+CREATE TABLE finanzas (
+    id_pago INT NOT NULL AUTO_INCREMENT,
+    id_jugador INT NOT NULL,
+    concepto VARCHAR(100) NOT NULL, -- Cuota Mensual, Cuota Incorporación
+    monto INT NOT NULL,
+    fecha_pago DATE,
+    estado_pago VARCHAR(20) DEFAULT 'Pendiente', -- Pagado, Pendiente
+    PRIMARY KEY (id_pago),
+    FOREIGN KEY (id_jugador) REFERENCES jugadores(id_jugador) ON DELETE CASCADE
+);
+
+
+-- 2. DATOS DE PRUEBA REALES DE LA APLICACIÓN (DML)
+
+-- Insertar los mismos jugadores que se ven en tu Dashboard
+INSERT INTO jugadores (nombre, posicion, dorsal, estado, asistencia_promedio) VALUES
+('Juan Pérez', 'Delantero', 9, 'Activo', 92),
+('Carlos Muñoz', 'Mediocampista', 8, 'Activo', 85),
+('Diego Soto', 'Defensa', 4, 'Lesionado', 60),
+('Luis Herrera', 'Portero', 1, 'Activo', 95),
+('Andrés Castro', 'Mediocampista', 10, 'Activo', 88);
+
+-- Insertar el historial de asistencias recientes
+INSERT INTO asistencia (id_jugador, fecha, tipo_evento, estado_asistencia) VALUES
+(1, '2026-06-15', 'Entrenamiento', 'Presente'),
+(2, '2026-06-15', 'Entrenamiento', 'Presente'),
+(3, '2026-06-15', 'Entrenamiento', 'Ausente'),
+(4, '2026-06-15', 'Entrenamiento', 'Presente'),
+(5, '2026-06-15', 'Entrenamiento', 'Presente'),
+(1, '2026-06-18', 'Partido', 'Presente'),
+(2, '2026-06-18', 'Partido', 'Presente'),
+(4, '2026-06-18', 'Partido', 'Presente'),
+(5, '2026-06-18', 'Partido', 'Justificado');
+
+-- Insertar el estado financiero de las cuotas de $5.000 (el total de $25.000 del Dashboard)
+INSERT INTO finanzas (id_jugador, concepto, monto, fecha_pago, estado_pago) VALUES
+(1, 'Cuota Mensual Junio', 5000, '2026-06-05', 'Pagado'),
+(2, 'Cuota Mensual Junio', 5000, '2026-06-06', 'Pagado'),
+(3, 'Cuota Mensual Junio', 5000, NULL, 'Pendiente'),
+(4, 'Cuota Mensual Junio', 5000, '2026-06-02', 'Pagado'),
+(5, 'Cuota Mensual Junio', 5000, '2026-06-10', 'Pagado');
