@@ -1,0 +1,6 @@
+## Prototipo  Stitch
+
+Puedes revisar el prototipo interactivo y los flujos de usuario de la plataforma "Jugada Maestra" en el siguiente enlace:
+
+(https://stitch.withgoogle.com/projects/17980090891190349391)
+
