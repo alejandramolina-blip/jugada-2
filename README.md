@@ -1,3 +1,10 @@
+# 🎥 VIDEO PITCH - PROYECTO JUGADA MAESTRA
+> **Importante:** Puedes ver nuestra videodemostración en el siguiente enlace:
+> ### 👉 https://youtu.be/i-0se9rSMK8
+
+---
+
+
 # Jugada Maestra ⚽
 
 *Plataforma Completa para la Administración de Clubes de Fútbol Amateur*
@@ -82,3 +89,4 @@ El proyecto está organizado siguiendo pautas de arquitectura limpia y modular:
 ## 💾 Persistencia en LocalStorage Sincronizada
 
 Toda la interacción del usuario se almacena localmente en el navegador a través de adaptadores seguros. Si se desea restaurar el sistema al estado inicial que incluye datos de prueba detallados de grandes deportistas como Diego Maradona o Lionel Messi integrando las distintas ramas de "Los Halcones", se puede utilizar el botón **"Restaurar BD Inicial"** ubicado en el pie del panel lateral izquierdo.
+
